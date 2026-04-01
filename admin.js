@@ -41,12 +41,12 @@ async function recompressProductImages(products) {
       if (!src || !src.startsWith('data:')) return src;
       // Recompress existing base64 images that are too large (> 100KB)
       const sizeKB = Math.round(src.length * 0.75 / 1024);
-      if (sizeKB <= 100) return src;
+      if (sizeKB <= 60) return src;
       return new Promise(resolve => {
         const img = new Image();
         img.onload = () => {
           let w = img.width, h = img.height;
-          const maxPx = 900;
+          const maxPx = 600;
           if (w > maxPx || h > maxPx) {
             if (w > h) { h = Math.round(h * maxPx / w); w = maxPx; }
             else       { w = Math.round(w * maxPx / h); h = maxPx; }
@@ -54,7 +54,7 @@ async function recompressProductImages(products) {
           const canvas = document.createElement('canvas');
           canvas.width = w; canvas.height = h;
           canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-          resolve(canvas.toDataURL('image/jpeg', 0.75));
+          resolve(canvas.toDataURL('image/jpeg', 0.65));
         };
         img.onerror = () => resolve(src);
         img.src = src;
@@ -334,7 +334,7 @@ function openFotosPicker() {
   input.multiple = true;
   input.onchange = () => {
     Array.from(input.files).forEach(async file => {
-      const compressed = await compressImage(file, 900, 0.75);
+      const compressed = await compressImage(file, 600, 0.65);
       pendingImages.push(compressed);
       renderFotosPreview();
     });
