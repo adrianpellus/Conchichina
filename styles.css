@@ -752,6 +752,58 @@ img {
   color: var(--pink);
 }
 
+.footer-social {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.footer-social-link {
+  color: rgba(255,250,246,0.5);
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+}
+
+.footer-social-link:hover {
+  color: var(--pink);
+  transform: scale(1.15);
+}
+
+.social-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  transition: transform 0.18s, opacity 0.18s;
+  text-decoration: none;
+}
+
+.btn-social:hover { transform: translateY(-2px); opacity: 0.88; }
+
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+}
+
+.btn-tiktok {
+  background: #010101;
+  color: white;
+  border: 1px solid #333;
+}
+
 .footer-copy {
   font-size: 0.8rem;
   color: var(--white);
