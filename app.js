@@ -16,7 +16,7 @@ const BANNER_COLORS = {
 
 async function initBanner() {
   let config = null;
-  try { config = await sbGet('banner'); } catch (e) {}
+  try { config = await sbGet('cc_banner'); } catch (e) {}
   if (!config) config = JSON.parse(localStorage.getItem('banner_config') || JSON.stringify(DEFAULT_BANNER));
 
   const banner = document.getElementById('banner');
@@ -146,7 +146,7 @@ function searchProducts(query) {
 async function loadProducts() {
   // Try Supabase first
   try {
-    const [prods, cats] = await Promise.all([sbGet('productos'), sbGet('categorias')]);
+    const [prods, cats] = await Promise.all([sbGet('cc_productos'), sbGet('cc_categorias')]);
     if (prods !== null) {
       allProducts = prods;
       if (cats) localStorage.setItem('categorias', JSON.stringify(cats));
@@ -189,7 +189,7 @@ async function loadFilters(products) {
   ];
 
   let stored = null;
-  try { stored = await sbGet('categorias'); } catch (e) {}
+  try { stored = await sbGet('cc_categorias'); } catch (e) {}
   if (!stored) stored = JSON.parse(localStorage.getItem('categorias') || 'null');
   if (!stored) stored = DEFAULT_CATEGORIAS;
   allCategorias = stored;

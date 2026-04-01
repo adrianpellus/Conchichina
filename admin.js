@@ -67,7 +67,7 @@ async function recompressProductImages(products) {
 async function loadAdminProducts() {
   // Always try Supabase first so all devices stay in sync
   try {
-    const remote = await sbGet('productos');
+    const remote = await sbGet('cc_productos');
     if (Array.isArray(remote) && remote.length > 0) {
       adminProducts = remote;
       renderAdminList();
@@ -77,7 +77,7 @@ async function loadAdminProducts() {
       if (changed) {
         adminProducts = recompressed;
         renderAdminList();
-        await sbSet('productos', adminProducts);
+        await sbSet('cc_productos', adminProducts);
       }
       localStorage.setItem('productos', JSON.stringify(adminProducts));
       return;
@@ -286,7 +286,7 @@ async function saveProducts() {
   localStorage.setItem('productos', JSON.stringify(adminProducts));
   renderAdminList();
   setPublishStatus('Guardando…', 'loading');
-  const ok = await sbSet('productos', adminProducts);
+  const ok = await sbSet('cc_productos', adminProducts);
   if (ok) {
     setPublishStatus('✅ Publicado en la web', 'ok');
   } else {
@@ -371,7 +371,7 @@ function loadCategorias() {
 async function saveCategorias(cats) {
   localStorage.setItem('categorias', JSON.stringify(cats));
   setPublishStatus('Guardando…', 'loading');
-  const ok = await sbSet('categorias', cats);
+  const ok = await sbSet('cc_categorias', cats);
   setPublishStatus(ok ? '✅ Publicado en la web' : '❌ Error al guardar', ok ? 'ok' : 'error');
 }
 
@@ -436,7 +436,7 @@ const BANNER_COLORS = {
 
 async function loadBannerAdmin() {
   let config = null;
-  try { config = await sbGet('banner'); } catch (e) {}
+  try { config = await sbGet('cc_banner'); } catch (e) {}
   if (!config) config = JSON.parse(localStorage.getItem('banner_config') || '{}');
   if (!config) return;
   if (config.texto) document.getElementById('banner-msg').value = config.texto;
@@ -459,7 +459,7 @@ async function saveBanner() {
     color
   };
   localStorage.setItem('banner_config', JSON.stringify(config));
-  await sbSet('banner', config);
+  await sbSet('cc_banner', config);
 
   // Update preview
   const colors = BANNER_COLORS[color] || BANNER_COLORS.terracota;
@@ -589,7 +589,7 @@ async function initConfigTab() {
   el.style.background = '#1A2A1A';
   el.style.color = '#6abf6a';
   try {
-    const data = await sbGet('productos');
+    const data = await sbGet('cc_productos');
     if (data !== null) {
       el.textContent = '✅ Supabase conectado correctamente';
       el.style.background = '#1A2A1A';
