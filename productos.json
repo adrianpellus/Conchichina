@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pendientes Argolla XL Dorada",
+    "categoria": "pendientes",
+    "precio": 18,
+    "precioMax": null,
+    "descripcion": "Argollas XL bañadas en oro de 18k. Grandes, atrevidas, para quien no pasa desapercibida. Acabado pulido con cierre presión.",
+    "stock": "Disponible",
+    "imagen": "img/placeholder.jpg",
+    "imagenes": ["img/placeholder.jpg"],
+    "visible": true
+  },
+  {
+    "id": 2,
+    "nombre": "Pendientes Flecos Cadena",
+    "categoria": "pendientes",
+    "precio": 22,
+    "precioMax": null,
+    "descripcion": "Pendientes de flecos en cadena dorada con movimiento libre. Cada paso que das, ellos bailan contigo. Hechos a mano, pieza única.",
+    "stock": "Disponible",
+    "imagen": "img/placeholder.jpg",
+    "imagenes": ["img/placeholder.jpg"],
+    "visible": true
+  },
+  {
+    "id": 3,
+    "nombre": "Pendientes Piedra Negra",
+    "categoria": "pendientes",
+    "precio": 15,
+    "precioMax": null,
+    "descripcion": "Piedra natural negra engarzada en montura dorada. Minimalistas y poderosos. El negro que va con todo y no se disculpa por nada.",
+    "stock": "Disponible",
+    "imagen": "img/placeholder.jpg",
+    "imagenes": ["img/placeholder.jpg"],
+    "visible": true
+  },
+  {
+    "id": 4,
+    "nombre": "Pendientes Cristal Rosa",
+    "categoria": "pendientes",
+    "precio": 20,
+    "precioMax": null,
+    "descripcion": "Cristal facetado en tono rosa chicle con montura dorada. La dureza del oro con la irreverencia del rosa. Inesperados y adictivos.",
+    "stock": "Disponible",
+    "imagen": "img/placeholder.jpg",
+    "imagenes": ["img/placeholder.jpg"],
+    "visible": true
+  }
+]
