@@ -106,7 +106,8 @@ img {
 .nav-logo-wrap { display:flex; align-items:center; gap:10px; text-decoration:none; }
 .nav-logo-text { display:flex; flex-direction:column; line-height:1; }
 .nav-logo-name { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:var(--pink); letter-spacing:0.08em; }
-.nav-logo-sub  { font-family:'Bebas Neue',sans-serif; font-size:0.75rem; color:var(--muted); letter-spacing:0.15em; }
+.nav-logo-sub  { font-family:'Inter',sans-serif; font-size:0.72rem; color:var(--muted); letter-spacing:0.05em; }
+.nav-logo-sub .loca { font-family:'Lilita One',cursive; font-size:1.05em; letter-spacing:0.02em; }
 
 .nav-links {
   display: none;
