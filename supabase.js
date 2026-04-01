@@ -1,5 +1,5 @@
-const SUPABASE_URL = 'TU_SUPABASE_URL';
-const SUPABASE_KEY = 'TU_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://icerisbxtstmzumuipuv.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljZXJpc2J4dHN0bXp1bXVpcHV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwNDY2NzcsImV4cCI6MjA5MDYyMjY3N30.SGtSbjIyYtiAZAieDHwKaDsKdMOQkgGhI7SoebydyCk';
 
 const SB_HEADERS = {
   'apikey': SUPABASE_KEY,
