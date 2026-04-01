@@ -3,24 +3,23 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black:    #0A0A0A;
-  --black-2:  #111111;
-  --black-3:  #1A1A1A;
-  --gold:     #D4AF37;
-  --gold-light: #E8C84A;
-  --pink:     #FF1F5B;
-  --white:    #F5F0E8;
-  --muted:    #888888;
-  --border:   #2A2A2A;
-  --radius:   4px;
+  --pink:      #FF3E8A;
+  --pink-soft: #FFB8D4;
+  --yellow:    #FFD447;
+  --black:     #1C1C1C;
+  --white:     #FFFAF6;
+  --cream:     #FFF0E8;
+  --muted:     #9A8070;
+  --border:    #F0D8CC;
+  --radius:    6px;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
@@ -49,8 +48,8 @@ img {
   justify-content: center;
   gap: 12px;
   padding: 10px 16px;
-  background: var(--gold);
-  color: var(--black);
+  background: var(--pink);
+  color: #fff;
   font-size: 0.875rem;
   font-weight: 600;
   text-align: center;
@@ -67,7 +66,7 @@ img {
   border: none;
   font-size: 1rem;
   cursor: pointer;
-  color: var(--black);
+  color: #fff;
   line-height: 1;
   padding: 2px 6px;
   opacity: 0.7;
@@ -80,8 +79,8 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--black);
-  border-bottom: 1px solid var(--border);
+  background: #fff;
+  border-bottom: 2px solid var(--pink);
 }
 
 .nav-inner {
@@ -103,13 +102,11 @@ img {
   flex-shrink: 0;
 }
 
-.nav-logo-text {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  color: var(--gold);
-  white-space: nowrap;
-}
+/* Nav logo wrap (new redesigned logo) */
+.nav-logo-wrap { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.nav-logo-text { display:flex; flex-direction:column; line-height:1; }
+.nav-logo-name { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; color:var(--pink); letter-spacing:0.08em; }
+.nav-logo-sub  { font-family:'Bebas Neue',sans-serif; font-size:0.75rem; color:var(--muted); letter-spacing:0.15em; }
 
 .nav-links {
   display: none;
@@ -127,17 +124,17 @@ img {
   letter-spacing: 0.03em;
 }
 
-.nav-link:hover { color: var(--gold); }
+.nav-link:hover { color: var(--pink); }
 
 .nav-link.nav-cta {
-  border: 1px solid var(--gold);
-  color: var(--gold);
+  border: 1px solid var(--pink);
+  color: var(--pink);
   border-radius: var(--radius);
 }
 
 .nav-link.nav-cta:hover {
-  background: var(--gold);
-  color: var(--black);
+  background: var(--pink);
+  color: #fff;
 }
 
 /* Hamburger */
@@ -156,7 +153,7 @@ img {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--white);
+  background: var(--black);
   transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -171,7 +168,7 @@ img {
   right: -100%;
   width: min(300px, 85vw);
   height: 100vh;
-  background: var(--black-2);
+  background: #fff;
   border-left: 1px solid var(--border);
   z-index: 500;
   display: flex;
@@ -186,7 +183,7 @@ img {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.35);
   z-index: 499;
 }
 
@@ -214,24 +211,23 @@ img {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2rem;
   letter-spacing: 0.06em;
-  color: var(--white);
+  color: var(--pink);
   padding: 10px 0;
   border-bottom: 1px solid var(--border);
   transition: color 0.2s;
 }
 
-.mobile-menu-link:hover { color: var(--gold); }
+.mobile-menu-link:hover { color: var(--black); }
 
 /* ─── HERO ───────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
   min-height: 100vh;
-  background: var(--black);
+  background: linear-gradient(135deg, #FFF0E8 0%, #FFD4E8 50%, #FFF8D0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 .hero-gem {
@@ -241,7 +237,7 @@ img {
   transform: translateY(-50%);
   width: clamp(280px, 50vw, 600px);
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 .hero-content {
@@ -260,20 +256,20 @@ img {
 
 .hero-title-line1 {
   font-size: clamp(3.5rem, 10vw, 8rem);
-  color: var(--white);
+  color: var(--black);
   display: block;
 }
 
 .hero-title-line2 {
   font-size: clamp(3.5rem, 10vw, 8rem);
-  color: var(--gold);
+  color: var(--pink);
   display: block;
 }
 
 .hero-divider {
   width: 80px;
   height: 2px;
-  background: var(--gold);
+  background: var(--yellow);
   margin: 24px 0;
 }
 
@@ -285,11 +281,11 @@ img {
   line-height: 1.7;
 }
 
-/* Gold CTA Button */
+/* Pink CTA Button */
 .btn-gold {
   display: inline-block;
-  background: var(--gold);
-  color: var(--black);
+  background: var(--pink);
+  color: #fff;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.1em;
   font-size: 1.1rem;
@@ -301,7 +297,7 @@ img {
 }
 
 .btn-gold:hover {
-  background: var(--gold-light);
+  background: #e0246e;
   transform: translateY(-2px);
 }
 
@@ -316,7 +312,7 @@ img {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: var(--gold);
+  color: var(--pink);
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -331,8 +327,8 @@ img {
   content: '';
   display: block;
   width: 40px;
-  height: 3px;
-  background: var(--gold);
+  height: 4px;
+  background: var(--yellow);
   margin-bottom: 12px;
 }
 
@@ -346,7 +342,7 @@ img {
 
 /* ─── COLLECTION SECTION ─────────────────────────────────────────────────── */
 .collection-section {
-  background: var(--black);
+  background: var(--cream);
 }
 
 /* Search */
@@ -368,17 +364,17 @@ img {
 .search-input {
   width: 100%;
   padding: 13px 14px 13px 44px;
-  background: var(--black-3);
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: 0;
   font-size: 0.9rem;
   font-family: 'Inter', sans-serif;
-  color: var(--white);
+  color: var(--black);
   outline: none;
   transition: border-color 0.2s;
 }
 
-.search-input:focus { border-color: var(--gold); }
+.search-input:focus { border-color: var(--pink); }
 .search-input::placeholder { color: var(--muted); }
 
 /* Filters */
@@ -404,11 +400,16 @@ img {
   font-family: 'Inter', sans-serif;
 }
 
-.filter-btn:hover,
+.filter-btn:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+  background: rgba(255, 62, 138, 0.06);
+}
+
 .filter-btn.active {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: rgba(212, 175, 55, 0.07);
+  background: var(--pink);
+  color: #fff;
+  border-color: var(--pink);
 }
 
 /* Products Grid */
@@ -420,20 +421,20 @@ img {
 }
 
 .product-card {
-  background: var(--black-2);
+  background: #fff;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
   transition: border-color 0.25s;
 }
 
-.product-card:hover { border-color: var(--gold); }
+.product-card:hover { border-color: var(--pink); }
 
 .product-img-wrap {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: var(--black-3);
+  background: var(--cream);
 }
 
 .product-img-wrap img {
@@ -451,9 +452,9 @@ img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.7);
+  background: rgba(255,255,255,0.85);
   border: none;
-  color: var(--white);
+  color: var(--black);
   font-size: 1.6rem;
   width: 36px;
   height: 36px;
@@ -468,7 +469,7 @@ img {
 
 .gallery-prev { left: 6px; }
 .gallery-next { right: 6px; }
-.gallery-prev:hover, .gallery-next:hover { background: rgba(212,175,55,0.8); }
+.gallery-prev:hover, .gallery-next:hover { background: rgba(255,62,138,0.15); }
 
 .gallery-dots {
   position: absolute;
@@ -484,11 +485,11 @@ img {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.5);
   transition: background 0.2s;
 }
 
-.gallery-dot.active { background: var(--gold); }
+.gallery-dot.active { background: var(--pink); }
 
 .product-body {
   padding: 20px;
@@ -499,18 +500,22 @@ img {
 }
 
 .product-category {
+  display: inline-block;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--pink);
+  background: var(--yellow);
+  color: var(--black);
+  border-radius: 50px;
+  padding: 2px 10px;
 }
 
 .product-name {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.3rem;
   letter-spacing: 0.04em;
-  color: var(--white);
+  color: var(--black);
   line-height: 1.1;
 }
 
@@ -532,7 +537,8 @@ img {
 .product-price {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.4rem;
-  color: var(--gold);
+  color: var(--pink);
+  font-weight: 700;
   letter-spacing: 0.04em;
 }
 
@@ -545,9 +551,9 @@ img {
   letter-spacing: 0.06em;
 }
 
-.stock-ok    { background: rgba(0,200,100,0.12); color: #4ade80; }
-.stock-low   { background: rgba(255,140,0,0.12); color: #fb923c; }
-.stock-order { background: rgba(100,150,255,0.12); color: #93c5fd; }
+.stock-ok    { background: rgba(0,180,80,0.12); color: #16a34a; }
+.stock-low   { background: rgba(255,120,0,0.12); color: #ea6c00; }
+.stock-order { background: rgba(255,62,138,0.12); color: var(--pink); }
 
 /* WhatsApp button */
 .btn-wa-product {
@@ -579,7 +585,7 @@ img {
 
 /* ─── HISTORIA SECTION ───────────────────────────────────────────────────── */
 .historia-section {
-  background: var(--black-2);
+  background: linear-gradient(135deg, #FFE8F4 0%, #FFF8D0 100%);
 }
 
 .historia-layout {
@@ -601,8 +607,12 @@ img {
 
 .historia-body p {
   font-size: 1rem;
-  color: rgba(245, 240, 232, 0.85);
+  color: var(--black);
   line-height: 1.8;
+}
+
+.historia-section .section-title {
+  color: var(--pink);
 }
 
 .historia-img-wrap {
@@ -616,29 +626,37 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 3px solid var(--gold);
+  border: 4px solid var(--pink);
+  border-radius: 12px;
   display: block;
+  transform: rotate(-2deg);
 }
 
 .historia-img-placeholder {
   width: 100%;
   height: 100%;
-  background: var(--black-3);
-  border: 3px solid var(--gold);
+  background: var(--cream);
+  border: 4px solid var(--pink);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 340px;
+  transform: rotate(-2deg);
 }
 
 /* ─── CONTACTO SECTION ───────────────────────────────────────────────────── */
 .contacto-section {
-  background: var(--black);
+  background: var(--cream);
   text-align: center;
 }
 
 .contacto-section .section-title::before {
   margin: 0 auto 12px;
+}
+
+.contacto-section .section-title {
+  color: var(--black);
 }
 
 .contacto-sub {
@@ -656,9 +674,9 @@ img {
   background: #25D366;
   color: #fff;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: 0.08em;
-  padding: 1.1rem 2.5rem;
+  padding: 1.2rem 3rem;
   border-radius: 0;
   transition: opacity 0.2s, transform 0.15s;
   margin-bottom: 56px;
@@ -680,8 +698,8 @@ img {
   align-items: flex-start;
   gap: 14px;
   padding: 20px;
-  background: var(--black-3);
-  border-left: 3px solid var(--gold);
+  background: #fff;
+  border-left: 3px solid var(--pink);
 }
 
 .contacto-card-icon {
@@ -695,7 +713,7 @@ img {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--gold);
+  color: var(--pink);
   margin-bottom: 4px;
 }
 
@@ -707,7 +725,7 @@ img {
 /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
 .footer {
   background: var(--black);
-  border-top: 1px solid var(--border);
+  border-top: none;
   padding: 32px 24px;
 }
 
@@ -731,22 +749,22 @@ img {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.1em;
-  color: var(--muted);
+  color: var(--pink);
 }
 
 .footer-copy {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--white);
 }
 
 .footer-admin {
   font-size: 0.72rem;
-  color: rgba(136,136,136,0.3);
+  color: rgba(255,250,246,0.2);
   letter-spacing: 0.04em;
   transition: color 0.2s;
 }
 
-.footer-admin:hover { color: var(--muted); }
+.footer-admin:hover { color: var(--pink); }
 
 /* ─── RESPONSIVE 768px ───────────────────────────────────────────────────── */
 @media (min-width: 768px) {
@@ -781,6 +799,6 @@ img {
   }
 
   .hero-gem {
-    opacity: 1;
+    opacity: 0.55;
   }
 }
