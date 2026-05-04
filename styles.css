@@ -723,6 +723,109 @@ img {
   color: var(--muted);
 }
 
+/* ─── CONÓCEME SECTION ───────────────────────────────────────────────────── */
+.conoce-section {
+  background: var(--white);
+}
+
+.conoce-section .section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.conoce-intro {
+  color: var(--muted);
+  max-width: 520px;
+  margin: -24px auto 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.conoce-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.conoce-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.conoce-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--pink);
+}
+
+.conoce-img-wrap {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.conoce-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.conoce-card:hover .conoce-img-wrap img {
+  transform: scale(1.05);
+}
+
+.conoce-content {
+  padding: 24px;
+}
+
+.conoce-icon {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.conoce-content h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--pink);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.conoce-content p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.conoce-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.conoce-list li {
+  font-size: 0.85rem;
+  color: var(--black);
+  line-height: 1.4;
+  padding-left: 20px;
+  position: relative;
+}
+
+.conoce-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: var(--yellow);
+  border-radius: 50%;
+}
+
 /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
 .footer {
   background: var(--black);
